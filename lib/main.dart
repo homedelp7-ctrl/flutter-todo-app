@@ -1,9 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:todo/widgets/first_page.dart';
 import './screens/home.dart';
 
+
+
+
+
 void main() {
-  runApp(const MyApp());
+  runApp(const MyApp(
+    
+  ));
+    
 }
 
 class MyApp extends StatelessWidget {
@@ -17,7 +25,14 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'ToDo',
-      home: Home(),
+      home: FirstPage(),
+      
     );
   }
 }
+
+
+
+
+
+
