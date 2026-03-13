@@ -25,7 +25,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: tdBGColor,
+      backgroundColor: const Color.fromARGB(255, 107, 117, 174),
       appBar: _buildAppBar(),
       body: Stack(
         children: [
@@ -115,7 +115,7 @@ class _HomeState extends State<Home> {
                     _addToDoItem(_todoController.text);
                   },
                   style: ElevatedButton.styleFrom(
-                    primary: tdBlue,
+                    backgroundColor: const Color.fromARGB(255, 204, 214, 5),
                     minimumSize: Size(60, 60),
                     elevation: 10,
                   ),
