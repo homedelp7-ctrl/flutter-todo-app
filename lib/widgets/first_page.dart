@@ -7,6 +7,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:todo/screens/home.dart';
+import 'package:todo/widgets/second_page.dart';
 
 
 
@@ -18,142 +19,88 @@ class FirstPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Salut tout le monde !'),
+        centerTitle: true,
+        backgroundColor: Colors.white,
       ),
       
-      body: Container (
-        width: double.infinity,
-        height: 300 ,
-        child: Padding(
-          padding: const EdgeInsets.all(10.0),
-          child: GridView(
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              crossAxisSpacing: 10,
-              mainAxisSpacing: 10,
-            ), 
-            children: [
-            
-              Container(
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Card(
+          clipBehavior: Clip.antiAlias,
+           shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20),
+            side: BorderSide(
+              color: const Color.fromARGB(255, 239, 238, 238),
+              width: 2,
+            ),
+          ),
+          margin: EdgeInsets.all(16),
+          elevation: 8,
+          child: Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: GridView(
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                crossAxisSpacing: 10,
+                mainAxisSpacing: 10,
+              ), 
+              children: [
                 
-                decoration: BoxDecoration(
-                  color: Colors.blue,
-                  borderRadius: BorderRadius.circular(20),
-                  border: Border.all(
-                    color: const Color.fromARGB(255, 68, 15, 15),
-                    width: 2,
-                  
+                Ink.image(
+                  image: AssetImage('assets/images/image1.jpeg'),
+                  fit: BoxFit.cover,
+                  child: InkWell(
+                    onTap: () {
+                    },
                   ),
                 ),
-                child:Column(
+                Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text('Travail',
-                    style :TextStyle(
-                      color: Colors.white,
-                      fontSize: 30,
-                     
-
-                     ),),
-                    ElevatedButton(
-                      onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => Home()));
-                      }, 
-                      child: Text('Go'),
-                    ),
-                  ],
-                ), 
-            
-              ),
-               Container(
-                decoration: BoxDecoration(
-                  color: Colors.blue,
-                  borderRadius: BorderRadius.circular(20),
-                  border: Border.all(
-                    color:  Colors.white,
-                  ),
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text('Ménage',style :TextStyle(
-                      color: Colors.white,
-                      fontSize: 30,
-
-                     ),),
-                    ElevatedButton(
-                      onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => Home()));
-                      }, 
-                      child: Text('Go'),
-                    ),
-                  ],
-                ),  
-            
-              ),
-               Container(
-                decoration: BoxDecoration(
-                  color: Colors.blue,
-                  borderRadius: BorderRadius.circular(20),
-                  border: Border.all(
-                    color:  Colors.white,
-                  ),
-                ),
-                child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text('Course',style :TextStyle(
-                      color: Colors.white,
-                      fontSize: 30,
-                     
-
-                     ),),
-                    ElevatedButton(
-                      onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => Home()));
-                      }, 
-                      child: Text('Go'),
-                    ),
-
-
-                ],)
-                 
-            
-              ),
-               Container(
-                decoration: BoxDecoration(
-                  color: Colors.blue,
-                  borderRadius: BorderRadius.circular(20),
-                  border: Border.all(
-                    color:  Colors.white,
-                  ),
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text('Enfant',
-                     style :TextStyle(
-                      color: Colors.white,
-                      fontSize: 30,
-                     
-
-                     ), ),
                     
+                    Text('Organisez votre vie et atteignez vos objectifs avec notre application conviviale!',
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    textAlign: TextAlign.center,
+                    ),
+                    SizedBox(height: 10),
                     ElevatedButton(
                       onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => Home()));
-                      }, 
-                      child: Text('Go'),
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => SecondPage()));
+                      },
+                      child: Text('Commencer', style: TextStyle(fontSize: 18),
+                      textWidthBasis: TextWidthBasis.longestLine,
+                     
+                  
+                      selectionColor: Colors.blue,
+                     
+                     
+                      
+                      ),
                     ),
                   ],
                 )
-            
-              ),
-            
+
               
-            ],
+              
+              ],
+             
+        
+        
+            ),
           ),
         ),
       ),
-    );
+    
+
+              
+
+      
+
+  
+  
+    );  
+
+
+      
   }
 }
