@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
         SystemUiOverlayStyle(statusBarColor: Colors.transparent));
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'ToDo App',
+      title: 'ToDo',
       home: Home(),
     );
   }
